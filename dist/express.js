@@ -37,9 +37,9 @@ function setup(app) {
         app.use('/404', (req, res) => {
             res.status(404).send({ message: 'Route not found' });
         });
-        app.all('/{*any}', (req, res) => __awaiter(this, void 0, void 0, function* () {
-            res.status(404).send({ message: 'Not Found' });
-        }));
+        // app.all('/{*any}', async (req, res) => {
+        //   res.status(404).send({ message: 'Not Found' });
+        // });
         app.use((req, res, next) => {
             logging_1.default.info(`incomming -> method: [${req.method}] - url: [${req.url}] - ip: [${req.socket.remoteAddress}]`);
             res.on('finish', () => {
