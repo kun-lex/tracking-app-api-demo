@@ -27,7 +27,7 @@ function setup(app) {
         }
         else {
             app.use((0, cors_1.default)());
-            app.all('/{*splat}', (0, cors_1.default)());
+            app.options('*', (0, cors_1.default)());
         }
         app.use(express_1.default.json());
         app.use("/api/v1/tracking", tracker_routes_1.default);
