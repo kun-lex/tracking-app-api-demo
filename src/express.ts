@@ -24,9 +24,9 @@ export default async function setup(app: Application): Promise<Application> {
   app.use('/404', (req, res) =>{
     res.status(404).send({message: 'Route not found'})
   })
-  app.all('/{*any}', async (req, res) => {
-    res.status(404).send({ message: 'Not Found' });
-  });
+  // app.all('/{*any}', async (req, res) => {
+  //   res.status(404).send({ message: 'Not Found' });
+  // });
   app.use((req: Request, res: Response, next: NextFunction) => {
       Logging.info(
       `incomming -> method: [${req.method}] - url: [${req.url}] - ip: [${req.socket.remoteAddress}]`,
