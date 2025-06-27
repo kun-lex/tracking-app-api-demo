@@ -13,7 +13,7 @@ export default async function setup(app: Application): Promise<Application> {
     app.options('*', cors({ origin: 'url' }));
   } else {
     app.use(cors());
-    app.all('/*splat', cors());
+    app.all('/{*splat}', cors());
   }
   app.use(express.json())
   app.use("/api/v1/tracking", trackingRoutes);
